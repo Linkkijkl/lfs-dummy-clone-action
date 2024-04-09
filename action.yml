@@ -1,0 +1,5 @@
+name: "Git lfs dummy clone action"
+description: "Creates dummy files in place of git lfs files to save on lfs traffic"
+runs:
+  using: "docker"
+  image: "Dockerfile"
