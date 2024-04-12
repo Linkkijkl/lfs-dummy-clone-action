@@ -1,10 +1,18 @@
 #!/bin/bash
 
 cd /github/workspace
+ls -als
 
 DUMMY_DIR=/dummies
 
+git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+git lfs ls-files
+
 LFS_FILES=`git lfs ls-files | awk '{split($0,a," "); print a[3]}'`
+
+echo "LFS file list:"
+echo $LFS_FILES
 
 for f in $LFS_FILES
 do
